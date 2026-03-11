@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
   Param,
   Patch,
   Post,
@@ -54,9 +55,4 @@ export class TasksController {
   updateTaskStatus() {
     return this.service.updateTaskStatus();
   }
-
-  // @Get('/')
-  // index() {
-  //   return 'Página inicial';
-  // }
 }
