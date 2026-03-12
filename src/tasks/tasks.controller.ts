@@ -13,6 +13,7 @@ import {
 import { TasksService } from './tasks.service';
 import type { CreateTaskDTO } from './dto/create-task.dto';
 import type { UpdateTaskDTO } from './dto/update-task.dto';
+import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 
 @Controller('/tasks')
 export class TasksController {
@@ -23,6 +24,9 @@ export class TasksController {
   }
 
   @Get()
+  @ApiOperation({ summary: 'Get all tasks' })
+  @ApiResponse({ status: 200, description: 'Return all tasks.' })
+  @ApiResponse({ status: 403, description: 'Forbidden' })
   getAllTasks(@Query() query: any) {
     // Ejecutar lógica coo :
     // - Buscar en BD
